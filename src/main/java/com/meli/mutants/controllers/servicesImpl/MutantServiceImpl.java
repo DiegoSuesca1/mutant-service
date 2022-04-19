@@ -1,8 +1,15 @@
 package com.meli.mutants.controllers.servicesImpl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.meli.mutants.controllers.dto.StatsDTO;
+import com.meli.mutants.controllers.repo.MutantRepository;
 import com.meli.mutants.controllers.services.MutantService;
+import com.meli.mutants.entity.TestAdnEntity;
+
 
 
 @Service
@@ -17,8 +24,29 @@ public class MutantServiceImpl implements MutantService {
 	private Short countSequence;
 	private Character previus;
 	
+	@Autowired	
+	MutantRepository repository;
+	
+	public MutantServiceImpl(MutantRepository repository) {
+		this.repository = repository;
+	}
+	
 	@Override
 	public Boolean isMutant(String[] dna) {
+		TestAdnEntity test = new TestAdnEntity();
+		if(isMutantLogic(dna)) {
+			test.setMutant(true);
+			repository.save(test);
+			return true;
+		}else {
+			test.setMutant(false);
+			repository.save(test);
+			return false;
+		}
+	}
+	
+	
+	private Boolean isMutantLogic(String[] dna) {
 		countSequence = 0;
 		
 		
@@ -222,6 +250,21 @@ public class MutantServiceImpl implements MutantService {
 			}
 		}
 		return false;
+	}
+
+
+	@Override
+	public StatsDTO getStats() {
+		StatsDTO stats = new StatsDTO();
+		List<Integer> statsInt = repository.getStats();
+		
+		stats.setCountMutantDna(statsInt.get(0));
+		stats.setCountHumanDna(statsInt.get(1));
+		
+		if(stats.getCountHumanDna() > 0) 			
+			stats.setRatio(Double.valueOf(stats.getCountMutantDna() / Double.valueOf(stats.getCountHumanDna())));
+		
+		return stats;
 	}
  
 }
