@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.meli.mutants.controllers.repo.MutantRepository;
-import com.meli.mutants.controllers.services.MutantService;
-import com.meli.mutants.controllers.servicesImpl.MutantServiceImpl;
+import com.meli.mutants.repo.MutantRepository;
+import com.meli.mutants.services.MutantService;
+import com.meli.mutants.servicesImpl.MutantServiceImpl;
 
 public class MutantsTest {
 
