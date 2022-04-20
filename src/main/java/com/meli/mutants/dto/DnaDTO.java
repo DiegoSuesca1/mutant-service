@@ -1,4 +1,4 @@
-package com.meli.mutants.controllers.dto;
+package com.meli.mutants.dto;
 
 public class DnaDTO{
 	

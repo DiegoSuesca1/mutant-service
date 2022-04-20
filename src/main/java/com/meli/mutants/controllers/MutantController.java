@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.meli.mutants.controllers.dto.DnaDTO;
-import com.meli.mutants.controllers.dto.StatsDTO;
-import com.meli.mutants.controllers.services.MutantService;
+import com.meli.mutants.dto.DnaDTO;
+import com.meli.mutants.dto.StatsDTO;
+import com.meli.mutants.services.MutantService;
 
 @RestController 
 @RequestMapping() 
