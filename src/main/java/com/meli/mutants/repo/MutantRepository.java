@@ -1,4 +1,4 @@
-package com.meli.mutants.controllers.repo;
+package com.meli.mutants.repo;
 
 import java.util.List;
 

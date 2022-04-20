@@ -1,8 +1,8 @@
-package com.meli.mutants.controllers.services;
+package com.meli.mutants.services;
 
 import org.springframework.stereotype.Service;
 
-import com.meli.mutants.controllers.dto.StatsDTO;
+import com.meli.mutants.dto.StatsDTO;
 
 @Service
 public interface MutantService {

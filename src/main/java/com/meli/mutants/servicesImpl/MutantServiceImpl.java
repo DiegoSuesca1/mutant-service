@@ -1,14 +1,14 @@
-package com.meli.mutants.controllers.servicesImpl;
+package com.meli.mutants.servicesImpl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.meli.mutants.controllers.dto.StatsDTO;
-import com.meli.mutants.controllers.repo.MutantRepository;
-import com.meli.mutants.controllers.services.MutantService;
+import com.meli.mutants.dto.StatsDTO;
 import com.meli.mutants.entity.TestAdnEntity;
+import com.meli.mutants.repo.MutantRepository;
+import com.meli.mutants.services.MutantService;
 
 
 
